@@ -1,0 +1,6 @@
+.country-container {
+  border: 2px solid #ed1010;
+  display: flex;
+  width: fit-content;
+  flex-wrap: wrap;
+}
