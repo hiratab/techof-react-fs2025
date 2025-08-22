@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 const Search = (props) => {
-  const [onlyShowProductsInStock, setOnlyShowProductsInStock] = useState(true)
 
   const handleChange = (event) => {
     props.setSearchTerm(event.target.value)
   }
 
   const handleChangeOnlyShowProductsInStock = (event) => {
-    setOnlyShowProductsInStock(event.target.value)
+    console.log('handleChangeOnlyShowProductsInStock', event.target.checked)
+    props.setOnlyShowProductsInStock(event.target.checked)
   }
 
   return (
@@ -22,7 +22,7 @@ const Search = (props) => {
       <input
         id="only-show-products-in-stock"
         type="checkbox"
-        value={onlyShowProductsInStock}
+        value={props.onlyShowProductsInStock}
         onChange={handleChangeOnlyShowProductsInStock}
       />
       <label htmlFor="only-show-products-in-stock">

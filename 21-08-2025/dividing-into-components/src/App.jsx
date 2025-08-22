@@ -4,6 +4,7 @@ import ProductCategoriesList from './components/ProductCategoriesList'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
+  const [onlyShowProductsInStock, setOnlyShowProductsInStock] = useState(false)
 
   const products = [
     {
@@ -70,8 +71,17 @@ function App() {
 
   return (
     <div>
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-      <ProductCategoriesList categoriesWithProducts={products} searchTerm={searchTerm} />
+      <Search
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        onlyShowProductsInStock={onlyShowProductsInStock}
+        setOnlyShowProductsInStock={setOnlyShowProductsInStock}
+        />
+      <ProductCategoriesList
+        categoriesWithProducts={products}
+        onlyShowProductsInStock={onlyShowProductsInStock}
+        searchTerm={searchTerm}
+      />
     </div>
   )
 }

@@ -8,7 +8,11 @@ const ProductCategoriesList = (props) => {
         <p>Price</p>
       </div>
       {props.categoriesWithProducts.map(categoryWithProducts => {
-        return <ProductCategoryList {...categoryWithProducts} searchTerm={props.searchTerm} />
+        return <ProductCategoryList
+          {...categoryWithProducts}
+          searchTerm={props.searchTerm}
+          onlyShowProductsInStock={props.onlyShowProductsInStock}
+        />
       })}
     </div>
   )
