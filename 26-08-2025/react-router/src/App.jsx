@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage'
 import UsersPage from './pages/UsersPage'
 import UserPage from './pages/UserPage'
 import PostsPage from './pages/PostsPage'
+import PostDetailPage from './pages/PostDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/user' element={<UsersPage />} />
         <Route path='/user/:userId' element={<UserPage />} />
         <Route path='/posts' element={<PostsPage />} />
+        <Route path='/post/:id' element={<PostDetailPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </Router>

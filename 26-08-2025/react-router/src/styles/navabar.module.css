@@ -1,5 +1,5 @@
 nav {
-  background-color: #242222;
+  background-color: #091833;
   padding: 0.5em;
   display: flex;
   flex-direction: row;
@@ -9,5 +9,5 @@ nav {
 
 .navbarLink {
   text-decoration: none;
-  color: greenyellow
+  color: #711c91
 }
