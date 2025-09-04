@@ -10,7 +10,7 @@ function ThemedToolbar() {
     <div>
       <ThemedButton
         theme={theme}
-        label={'Toggle Theme'}
+        label={theme === 'light'? 'Light Mode On' : 'Dark Mode On'} 
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       />
       <h2
