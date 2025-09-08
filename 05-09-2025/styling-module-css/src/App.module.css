@@ -1,0 +1,29 @@
+div > p:first-child {
+  font-weight: 700;
+}
+
+.short-description {
+  background-color: white;
+}
+
+.container {
+  background-color: white;
+  padding: 0.3em;
+  border-radius: 2%;
+}
+
+.container:hover {
+  background-color: white;
+}
+
+.primary {
+  font-size: 2.5em;
+  font-weight: 900;
+  line-height: 1.75em;
+}
+
+.secondary {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1em;
+}

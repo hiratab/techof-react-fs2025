@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+div > p:first-child {
+  font-weight: 100;
+}
+
+.container {
+  background-color: blueviolet;
+}
