@@ -34,31 +34,33 @@ function App() {
   const [hasError, setHasError] = useState<boolean>(false)
   const [isLoading, setLoading] = useState<boolean>(true)
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Failed to fetch all users')
-        }
+  const fetchAllUsers = async () => {
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-        return res.json()
-      })
-      .then((data: User[]) => {
-        setLoading(false)
-        setUsers(data)
-      })
-      .catch(error => {
-        setLoading(false)
-        setHasError(error)
-      })
+      if (!response.ok) {
+        throw new Error('Failed to fetch all users')
+      }
+
+      const data: User[] = await response.json()
+      setUsers(data)
+    } catch (error) {
+      setHasError(true)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchAllUsers()
   }, [])
+  
+  if (isLoading) {
+    return <p>Loading</p>
+  }
 
   if (hasError) {
     return <p>Error</p>
-  }
-
-  if (isLoading) {
-    return <p>Loading</p>
   }
 
   return (
